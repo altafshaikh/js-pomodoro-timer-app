@@ -26,6 +26,10 @@ function startTimer() {
   let { total } = timer.remainingTime;
   const endTime = Date.parse(new Date()) + total * 1000;
 
+  mainButton.dataset.action = "stop";
+  mainButton.textContent = "stop";
+  mainButton.classList.add("active");
+
   interval = setInterval(function () {
     timer.remainingTime = getRemainingTime(endTime);
     updateClock();
@@ -64,6 +68,10 @@ function switchMode(mode) {
 
   updateClock();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  switchMode("pomodoro");
+});
 
 const mainButton = document.getElementById("js-btn");
 mainButton.addEventListener("click", () => {

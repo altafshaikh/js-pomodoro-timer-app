@@ -71,6 +71,7 @@ progress::-webkit-progress-value {
   margin-bottom: 30px;
   font-size: 22vw;
   line-height: 1;
+  color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
   font-family: arial, sans-serif;

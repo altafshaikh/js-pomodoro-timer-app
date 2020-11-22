@@ -5,6 +5,23 @@ const timer = {
   longBreakInterval: 4,
 };
 
+function switchMode(mode) {
+  timer.mode = mode;
+  timer.remainingTime = {
+    total: timer[mode] * 60, // 25x60, 5x60, 15x60
+    minutes: timer[mode], // 25, 5, 15
+    seconds: 0, //always 0
+  };
+
+  document
+    .querySelectorAll("button[data-mode]")
+    .forEach((e) => e.classList.remove("active"));
+  document.querySelector(`[data-mode="${mode}"]`).classList.add("active");
+  document.body.style.backgroundColor = `var(--${mode})`;
+
+  updateClock();
+}
+
 //event deligation
 // https://javascript.info/event-delegation
 const modeButtons = document.querySelector("#js-mode-buttons");

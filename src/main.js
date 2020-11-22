@@ -45,6 +45,7 @@ function startTimer() {
     updateClock();
 
     total = timer.remainingTime.total;
+
     if (total <= 0) {
       clearInterval(interval);
       switch (timer.mode) {

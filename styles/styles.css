@@ -97,12 +97,12 @@ progress::-webkit-progress-value {
 .main-button {
   cursor: pointer;
   box-shadow: rgb(235, 235, 235) 0px 6px 0px;
-  font-size: 22px;
+  font-size: 2vw;
   height: 55px;
   text-transform: uppercase;
   color: hsl(175, 26%, 41%);
   font-weight: bold;
-  width: 200px;
+  width: 20vw;
   background-color: white;
   border-width: initial;
   border-style: none;
@@ -129,6 +129,24 @@ button:active {
 
 @media screen and (max-width: 550px) {
   .clock {
-    font-size: 32vw;
+    font-size: 28vw;
+  }
+  .main-button {
+    width: 55vw !important;
+    font-size: 7vw !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .main-button {
+    width: 32vw;
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 967.98px) {
+  .main-button {
+    width: 26vw;
+    font-size: 3vw;
   }
 }

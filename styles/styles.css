@@ -24,7 +24,7 @@ html {
 /* Using CSS custom properties (variables) 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
 :root {
-  --pomodoro: hsl(223, 25%, 40%);
+  --pomodoro: hsl(25deg 91% 57%);
   --shortBreak: hsl(48, 23%, 40%);
   --longBreak: hsl(105, 16%, 40%);
 }
@@ -50,7 +50,7 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background-color: #fff;
+  background-color: rgb(135, 197, 255);
 }
 .mode-buttons {
   display: flex;

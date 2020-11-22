@@ -5,6 +5,17 @@ const timer = {
   longBreakInterval: 4,
 };
 
+function updateClock() {
+  const { remainingTime } = timer;
+  const minutes = `${remainingTime.minutes}`.padStart(2, "0"); //00
+  const seconds = `${remainingTime.seconds}`.padStart(2, "0"); //00
+
+  const min = document.getElementById("js-minutes");
+  const sec = document.getElementById("js-seconds");
+  min.textContent = minutes;
+  sec.textContent = seconds;
+}
+
 function switchMode(mode) {
   timer.mode = mode;
   timer.remainingTime = {

@@ -9,6 +9,10 @@ const timer = {
   sessions: 0,
 };
 
+timer.pomodoro = prompt("Set time For Pomo in Minutes");
+timer.shortBreak = prompt("Set the Short Break Time in minutes");
+timer.longBreak = prompt("Set the Long Break Time in minutes");
+
 let interval;
 
 function getRemainingTime(endTime) {

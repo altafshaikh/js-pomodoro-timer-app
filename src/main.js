@@ -90,6 +90,9 @@ function updateClock() {
   min.textContent = minutes;
   sec.textContent = seconds;
 
+  if (minutes <= 5) {
+    document.getElementById("js-clock").style.color = "#bb0d0d";
+  }
   const text =
     timer.mode === "pomodoro" ? "Get back to work!" : "Take a break!";
   document.title = `${minutes}:${seconds} — ${text}`;

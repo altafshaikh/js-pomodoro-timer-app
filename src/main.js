@@ -176,6 +176,7 @@ function handleMode(event) {
 let spacePressed = false;
 //keyboard event to handel start and stop timer
 function keyboardStart(e) {
+  buttonSound.play();
   if (e.keyCode == 32) {
     spacePressed = !spacePressed;
     if (spacePressed) {

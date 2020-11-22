@@ -65,6 +65,14 @@ function switchMode(mode) {
   updateClock();
 }
 
+const mainButton = document.getElementById("js-btn");
+mainButton.addEventListener("click", () => {
+  const { action } = mainButton.dataset;
+  if (action === "start") {
+    startTimer();
+  }
+});
+
 //event deligation
 // https://javascript.info/event-delegation
 const modeButtons = document.querySelector("#js-mode-buttons");

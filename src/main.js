@@ -104,5 +104,6 @@ function handleMode(event) {
   if (!mode) return;
 
   switchMode(mode);
+  stopTimer();
 }
 //end event deligation

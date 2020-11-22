@@ -21,6 +21,8 @@ html {
   padding: 0;
 }
 
+/* Using CSS custom properties (variables) 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
 :root {
   --pomodoro: hsl(223, 25%, 40%);
   --shortBreak: hsl(48, 23%, 40%);
@@ -57,7 +59,6 @@ progress::-webkit-progress-value {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
 }
 
 .clock {

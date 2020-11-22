@@ -52,7 +52,12 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
   background-color: #fff;
 }
-
+.mode-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 .timer {
   height: 100vh;
   display: flex;
@@ -64,7 +69,7 @@ progress::-webkit-progress-value {
 .clock {
   margin-top: 50px;
   margin-bottom: 30px;
-  font-size: 32vw;
+  font-size: 22vw;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -124,6 +129,6 @@ button:active {
 
 @media screen and (max-width: 550px) {
   .clock {
-    font-size: 8rem;
+    font-size: 32vw;
   }
 }

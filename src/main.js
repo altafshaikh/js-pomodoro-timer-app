@@ -51,7 +51,7 @@ function startTimer() {
         default:
           switchMode("pomodoro");
       }
-
+      document.querySelector(`[data-sound="${timer.mode}"]`).play();
       startTimer();
     }
   }, 1000);
@@ -107,8 +107,12 @@ document.addEventListener("DOMContentLoaded", () => {
   switchMode("pomodoro");
 });
 
+const buttonSound = new Audio("/audios/button-sound.mp3");
+
 const mainButton = document.getElementById("js-btn");
 mainButton.addEventListener("click", () => {
+  buttonSound.play();
+
   const { action } = mainButton.dataset;
   if (action === "start") {
     startTimer();

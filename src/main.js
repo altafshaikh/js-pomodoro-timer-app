@@ -9,9 +9,18 @@ const timer = {
   sessions: 0,
 };
 
-timer.pomodoro = prompt("Set time For Pomo in Minutes");
-timer.shortBreak = prompt("Set the Short Break Time in minutes");
-timer.longBreak = prompt("Set the Long Break Time in minutes");
+let userPomotime = prompt("Set time For Pomo in Minutes");
+if (pomotime) {
+  timer.pomodoro = userPomotime;
+}
+let userBreaktime = prompt("Set the Short Break Time in minutes");
+if (userBreaktime) {
+  timer.shortBreak = userBreaktime;
+}
+let userLongBreaktime = prompt("Set the Long Break Time in minutes");
+if (userLongBreaktime) {
+  timer.longBreak = userLongBreaktime;
+}
 
 let interval;
 let clock = document.getElementById("js-clock");
@@ -193,7 +202,6 @@ function handleClickMode(event) {
   switchMode(mode);
   stopTimer();
 }
-//end event deligation
 
 const body = document.querySelector("body");
 body.addEventListener("keypress", handleKeyboardMode);
@@ -224,3 +232,5 @@ function handleKeyboardMode(e) {
     return;
   }
 }
+
+//end event deligation

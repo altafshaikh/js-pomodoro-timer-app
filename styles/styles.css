@@ -166,6 +166,21 @@ button:active {
   outline: none;
 }
 
+.key-events {
+  margin: 36px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.key-events span {
+  background-color: #fff;
+  color: black;
+  padding: 3px;
+  border-radius: 2px;
+  margin: 0px 4px;
+  text-align: center;
+}
+
 .hidden {
   display: none;
 }
@@ -177,6 +192,12 @@ button:active {
   .main-button {
     width: 55vw !important;
     font-size: 7vw !important;
+  }
+  .key-events {
+    flex-direction: column;
+  }
+  .key-events span {
+    margin: 3px 4px;
   }
 }
 

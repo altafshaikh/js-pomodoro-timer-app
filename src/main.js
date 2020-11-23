@@ -9,18 +9,18 @@ const timer = {
   sessions: 0,
 };
 
-let userPomotime = prompt("Set time For Pomo in Minutes");
-if (pomotime) {
-  timer.pomodoro = userPomotime;
-}
-let userBreaktime = prompt("Set the Short Break Time in minutes");
-if (userBreaktime) {
-  timer.shortBreak = userBreaktime;
-}
-let userLongBreaktime = prompt("Set the Long Break Time in minutes");
-if (userLongBreaktime) {
-  timer.longBreak = userLongBreaktime;
-}
+// let userPomotime = prompt("Set time For Pomo in Minutes");
+// if (userPomotime) {
+//   timer.pomodoro = userPomotime;
+// }
+// let userBreaktime = prompt("Set the Short Break Time in minutes");
+// if (userBreaktime) {
+//   timer.shortBreak = userBreaktime;
+// }
+// let userLongBreaktime = prompt("Set the Long Break Time in minutes");
+// if (userLongBreaktime) {
+//   timer.longBreak = userLongBreaktime;
+// }
 
 let interval;
 let clock = document.getElementById("js-clock");
@@ -28,6 +28,7 @@ let min = document.getElementById("js-minutes");
 let sec = document.getElementById("js-seconds");
 let separator = document.getElementsByClassName("separator")[0];
 
+// return me the time left
 function getRemainingTime(endTime) {
   const currentTime = Date.parse(new Date());
   const difference = endTime - currentTime;
@@ -44,8 +45,9 @@ function getRemainingTime(endTime) {
 }
 
 function startTimer() {
+  //js Object destructuring values => extract value of total from timer.remainingTime object
   let { total } = timer.remainingTime;
-  const endTime = Date.parse(new Date()) + total * 1000;
+  const endTime = Date.parse(new Date()) + total * 1000; //milliseconds
 
   if (timer.mode === "pomodoro") timer.sessions++;
 
@@ -112,7 +114,7 @@ function updateClock() {
   min.textContent = minutes;
   sec.textContent = seconds;
 
-  if (minutes <= 5) {
+  if (minutes <= 5 && interval) {
     clock.style.color = "#bb0d0d";
     separator.classList.remove("blinking");
     separator.classList.add("blinking-danger");

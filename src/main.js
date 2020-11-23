@@ -118,6 +118,9 @@ function updateClock() {
 }
 
 function switchMode(mode) {
+  if (interval) {
+    stopTimer();
+  }
   timer.mode = mode;
   timer.remainingTime = {
     total: timer[mode] * 60, // 25x60, 5x60, 15x60
@@ -178,9 +181,9 @@ mainButton.addEventListener("click", () => {
 //event deligation
 // https://javascript.info/event-delegation
 const modeButtons = document.querySelector("#js-mode-buttons");
-modeButtons.addEventListener("click", handleMode);
+modeButtons.addEventListener("click", handleClickMode);
 
-function handleMode(event) {
+function handleClickMode(event) {
   //extract mode value from event
   console.log(event.target.dataset);
   const { mode } = event.target.dataset; // pomodoro, shortBreak, longBreak
@@ -192,16 +195,32 @@ function handleMode(event) {
 }
 //end event deligation
 
+const body = document.querySelector("body");
+body.addEventListener("keypress", handleKeyboardMode);
+
+//keyboard event to handel start() and stop() timer
 let spacePressed = false;
-//keyboard event to handel start and stop timer
-function keyboardStart(e) {
-  buttonSound.play();
+// keyboard event to handel switchMode()
+// key code
+// p=112 => pomodoro mode
+// s=115 => short break mode
+// l=108 => long break mode
+function handleKeyboardMode(e) {
   if (e.keyCode == 32) {
+    buttonSound.play();
     spacePressed = !spacePressed;
     if (spacePressed) {
       startTimer();
     } else {
       stopTimer();
     }
+  } else if (e.keyCode == 112) {
+    switchMode("pomodoro");
+  } else if (e.keyCode == 115) {
+    switchMode("shortBreak");
+  } else if (e.keyCode == 108) {
+    switchMode("longBreak");
+  } else {
+    return;
   }
 }

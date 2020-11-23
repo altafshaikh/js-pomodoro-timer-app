@@ -14,6 +14,10 @@ timer.shortBreak = prompt("Set the Short Break Time in minutes");
 timer.longBreak = prompt("Set the Long Break Time in minutes");
 
 let interval;
+let clock = document.getElementById("js-clock");
+let min = document.getElementById("js-minutes");
+let sec = document.getElementById("js-seconds");
+let separator = document.getElementsByClassName("separator")[0];
 
 function getRemainingTime(endTime) {
   const currentTime = Date.parse(new Date());
@@ -40,8 +44,11 @@ function startTimer() {
   mainButton.textContent = "stop";
   mainButton.classList.add("active");
 
+  separator.classList.add("blinking");
+
   interval = setInterval(function () {
     timer.remainingTime = getRemainingTime(endTime);
+
     updateClock();
 
     total = timer.remainingTime.total;
@@ -75,6 +82,12 @@ function startTimer() {
 function stopTimer() {
   clearInterval(interval);
 
+  if (timer.remainingTime.minutes <= 5) {
+    separator.classList.remove("blinking-danger");
+  } else {
+    separator.classList.remove("blinking");
+  }
+
   mainButton.dataset.action = "start";
   mainButton.textContent = "start";
   mainButton.classList.remove("active");
@@ -85,14 +98,17 @@ function updateClock() {
   const minutes = `${remainingTime.minutes}`.padStart(2, "0"); //00
   const seconds = `${remainingTime.seconds}`.padStart(2, "0"); //00
 
-  const min = document.getElementById("js-minutes");
-  const sec = document.getElementById("js-seconds");
+  //global variable
+  //textContent has better performance wrt innerHTML
   min.textContent = minutes;
   sec.textContent = seconds;
 
   if (minutes <= 5) {
-    document.getElementById("js-clock").style.color = "#bb0d0d";
+    clock.style.color = "#bb0d0d";
+    separator.classList.remove("blinking");
+    separator.classList.add("blinking-danger");
   }
+
   const text =
     timer.mode === "pomodoro" ? "Get back to work!" : "Take a break!";
   document.title = `${minutes}:${seconds} — ${text}`;

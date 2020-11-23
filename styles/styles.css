@@ -117,7 +117,7 @@ progress::-webkit-progress-value {
 }
 
 .blinking-danger {
-  animation: blinkingDanger 0.7s infinite;
+  animation: blinkingDanger 1s infinite;
 }
 @keyframes blinkingDanger {
   0% {

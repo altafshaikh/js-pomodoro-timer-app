@@ -114,7 +114,7 @@ function updateClock() {
   min.textContent = minutes;
   sec.textContent = seconds;
 
-  if (minutes <= 5 && interval) {
+  if (minutes <= 2 && interval) {
     clock.style.color = "#bb0d0d";
     separator.classList.remove("blinking");
     separator.classList.add("blinking-danger");

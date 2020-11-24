@@ -9,18 +9,18 @@ const timer = {
   sessions: 0,
 };
 
-// let userPomotime = prompt("Set time For Pomo in Minutes");
-// if (userPomotime) {
-//   timer.pomodoro = userPomotime;
-// }
-// let userBreaktime = prompt("Set the Short Break Time in minutes");
-// if (userBreaktime) {
-//   timer.shortBreak = userBreaktime;
-// }
-// let userLongBreaktime = prompt("Set the Long Break Time in minutes");
-// if (userLongBreaktime) {
-//   timer.longBreak = userLongBreaktime;
-// }
+let userPomotime = prompt("Set time For Pomo in Minutes");
+if (userPomotime) {
+  timer.pomodoro = userPomotime;
+}
+let userBreaktime = prompt("Set the Short Break Time in minutes");
+if (userBreaktime) {
+  timer.shortBreak = userBreaktime;
+}
+let userLongBreaktime = prompt("Set the Long Break Time in minutes");
+if (userLongBreaktime) {
+  timer.longBreak = userLongBreaktime;
+}
 
 let interval;
 let clock = document.getElementById("js-clock");

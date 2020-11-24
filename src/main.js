@@ -196,7 +196,7 @@ modeButtons.addEventListener("click", handleClickMode);
 
 function handleClickMode(event) {
   //extract mode value from event
-  console.log(event.target.dataset);
+  // console.log(event.target.dataset);
   const { mode } = event.target.dataset; // pomodoro, shortBreak, longBreak
 
   if (!mode) return;

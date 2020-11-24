@@ -31,7 +31,7 @@ let separator = document.getElementsByClassName("separator")[0];
 // return me the time left
 function getRemainingTime(endTime) {
   const currentTime = Date.parse(new Date());
-  const difference = endTime - currentTime;
+  const difference = endTime - currentTime; //this will be mostly float num
 
   const total = Number.parseInt(difference / 1000, 10);
   const minutes = Number.parseInt((total / 60) % 60, 10);

@@ -37,6 +37,20 @@ body {
   user-select: none;
 }
 
+.logo {
+  height: 50px;
+  width: 150px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.navigation {
+  background-color: transparent;
+  display: flex;
+  padding: 0 20px;
+  margin: 0;
+}
+
 progress {
   border-radius: 2px;
   width: 100%;
@@ -52,6 +66,11 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
   background-color: rgb(135, 197, 255);
 }
+
+main {
+  height: 100vh;
+}
+
 .mode-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -59,7 +78,7 @@ progress::-webkit-progress-value {
   justify-content: center;
 }
 .timer {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,9 +86,9 @@ progress::-webkit-progress-value {
 }
 
 .clock {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  font-size: 22vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20vw;
   line-height: 1;
   color: rgb(0, 0, 0);
   display: flex;
@@ -185,15 +204,51 @@ button:active {
   display: none;
 }
 
+footer {
+  background-color: transparent;
+  color: white;
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer .social-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+footer .social-links a:hover {
+  color: #2f9ee5;
+}
+
+footer .copy span {
+  color: #000000;
+}
+
 @media screen and (max-width: 550px) {
+  .navigation {
+    justify-content: center;
+  }
+  .logo {
+    margin: 16px 0;
+  }
+
+  footer {
+    flex-direction: column;
+  }
   .clock {
-    font-size: 28vw;
+    font-size: 26vw;
   }
   .main-button {
     width: 55vw !important;
     font-size: 7vw !important;
   }
   .key-events {
+    display: none;
     flex-direction: column;
   }
   .key-events span {

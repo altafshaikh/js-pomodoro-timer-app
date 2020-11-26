@@ -5,9 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Pomodoro App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
+    <header>
+      <nav class="navigation">
+        <div class="logo-container">
+          <a href="#">
+            <img
+              class="logo"
+              src="https://www.raweng.com/v3/assets/bltaacb6b0c9b693c2d/bltc1a71705f49d391d/5de663548d1dce6ad6bed8bf/header-logo.svg?format=pjpg&width=220"
+              alt=""
+            />
+          </a>
+        </div>
+      </nav>
+    </header>
     <main class="app">
       <progress id="js-progress" value="0"></progress>
       <div class="progress-bar"></div>
@@ -49,6 +66,17 @@
         </div>
       </div>
     </main>
+    <footer>
+      <p class="copy">
+        &copy; 2020 All Rights Reserved by <span>Altaf Shaikh</span>
+      </p>
+      <div class="social-links">
+        <a href="#" class="fa fa-twitter twitter"></a>
+        <a href="#" class="fa fa-linkedin linkedin"></a>
+        <a href="#" class="fa fa-facebook facebook"></a>
+        <a href="#" class="fa fa-github github"></a>
+      </div>
+    </footer>
     <div class="hidden">
       <audio src="./audios/backtowork.mp3" data-sound="pomodoro"></audio>
       <audio src="./audios/break.mp3" data-sound="shortBreak"></audio>

@@ -66,3 +66,8 @@ To Host the Project I had used Github Pages. To learn more [visit her](https://t
 * **Altaf Shaikh** - *work by* - [ialtafshaikh](https://github.com/ialtafshaikh)
 
 ![altaf shaikh](https://raw.githubusercontent.com/ialtafshaikh/static-files/master/coollogo_com-327551664.png)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+

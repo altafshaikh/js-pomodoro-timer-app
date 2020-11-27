@@ -37,6 +37,9 @@ You need to have a basic knowledge of html, css and JavaScript under your belt. 
 #### VS code Extension
 - Live server to run the project. Click [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer#:~:text=Open%20a%20HTML%20file%20and,on%20Open%20with%20Live%20Server%20.&text=Open%20the%20Command%20Pallete%20by,Server%20to%20stop%20a%20server.) to see download instructions and how to use live server to tun the project
 
+## Sample Working
+![pomodoro-app-demo](https://github.com/ialtafshaikh/static-files/raw/master/gifs/pomodoro-app-demo.gif)
+
 ### Downloading and Running this Project Locally
 1. clone the repo using below command
 ```
